@@ -1,8 +1,9 @@
 import { Body, Controller, Post } from '@nestjs/common';
 import { RegisterService } from './register.service';
-import { ApiBody } from '@nestjs/swagger';
-import { Register } from 'src/Schemas/register';
+import { ApiBody, ApiTags } from '@nestjs/swagger';
+import { Register } from './register.schema';
 
+@ApiTags('register')
 @Controller('/register')
 export class RegisterController {
   constructor(private readonly registerService: RegisterService) {}
@@ -14,6 +15,9 @@ export class RegisterController {
   })
   @Post('/register')
   register(@Body() body: Register): string {
+    console.log('====================================');
+    console.log({ body });
+    console.log('====================================');
     return this.registerService.register(body);
   }
 }

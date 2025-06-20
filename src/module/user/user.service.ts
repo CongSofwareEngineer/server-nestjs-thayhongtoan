@@ -1,21 +1,22 @@
 import { Injectable } from '@nestjs/common';
-import { User } from 'src/schemas/user.schema';
+import { User } from 'src/module/user/user.schema';
 
 @Injectable()
 export class UserService {
-  private readonly users = [
+  private readonly users: User[] = [
     {
-      username: 'john',
+      userName: 'john',
+
       password: 'changeme',
     },
     {
-      username: 'maria',
+      userName: 'maria',
       password: 'guess',
     },
   ];
 
-  async findOne(username: string): Promise<User | undefined> {
+  async findOne(userName: string): Promise<User | undefined> {
     await new Promise((resolve) => setTimeout(resolve, 100)); // Simulate async operation
-    return this.users.find((user) => user.username === username);
+    return this.users.find((user) => user.userName === userName);
   }
 }
