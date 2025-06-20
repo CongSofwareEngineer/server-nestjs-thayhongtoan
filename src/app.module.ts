@@ -3,10 +3,12 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { ConfigModule } from '@nestjs/config';
 import { AuthModule } from 'src/auth/auth.module';
+import { RegisterModule } from 'src/module/register/register.module';
 
 @Module({
   imports: [
     AuthModule,
+    RegisterModule,
     ConfigModule.forRoot({
       envFilePath: '.env.test.local',
       isGlobal: true,
