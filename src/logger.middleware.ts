@@ -1,6 +1,6 @@
 import { HttpStatus, Injectable, NestMiddleware } from '@nestjs/common';
 import { Request, Response, NextFunction } from 'express';
-import { AuthService } from './auth/auth.service';
+import { AuthService } from './module/auth/auth.service';
 
 @Injectable()
 export class LoggerMiddleware implements NestMiddleware {
