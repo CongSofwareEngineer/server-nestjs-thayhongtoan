@@ -15,9 +15,6 @@ export class RegisterController {
   })
   @Post('/register')
   register(@Body() body: Register): string {
-    console.log('====================================');
-    console.log({ body });
-    console.log('====================================');
     return this.registerService.register(body);
   }
 }
