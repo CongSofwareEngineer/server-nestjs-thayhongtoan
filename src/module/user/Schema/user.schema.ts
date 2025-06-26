@@ -1,6 +1,6 @@
 import { Schema, SchemaFactory } from '@nestjs/mongoose';
 import { HydratedDocument } from 'mongoose';
-import { Register } from 'src/module/register/register.schema';
+import { Register } from 'src/module/register/Schema/register.schema';
 
 @Schema({ versionKey: false })
 export class User extends Register {}

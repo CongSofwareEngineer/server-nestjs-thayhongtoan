@@ -1,7 +1,7 @@
 import { Body, Controller, Get, Post } from '@nestjs/common';
 import { UserService } from './user.service';
 import { ApiBody, ApiTags } from '@nestjs/swagger';
-import { User } from './user.schema';
+import { User } from './Schema/user.schema';
 @ApiTags('User')
 @Controller('/user')
 export class UserController {
@@ -28,7 +28,7 @@ export class UserController {
     schema: {
       example: {
         phone: '0392225405',
-        password: 'changeme',
+        password: 'password',
       },
     },
 
