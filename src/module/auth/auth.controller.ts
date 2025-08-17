@@ -6,7 +6,6 @@ import { User } from 'src/module/user/Schema/user.schema';
 export class AuthController {
   constructor(private authService: AuthService) {}
 
-  @HttpCode(HttpStatus.OK)
   @Post('login')
   signIn(@Body() signInDto: User) {
     return this.authService.signIn(signInDto.userName, signInDto.password!);
